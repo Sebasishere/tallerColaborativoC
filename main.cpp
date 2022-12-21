@@ -4,12 +4,12 @@
 #include <math.h>
 
 //Numeros Romanos
-int romanToInt(char* s) {
+int romanToInt(char *s) {
     int result = 0;
     int i;
     for (i = 0; i < strlen(s); i++) {
         if (s[i] == 'I') {
-            if (s[i+1] == 'V' || s[i+1] == 'X') {
+            if (s[i + 1] == 'V' || s[i + 1] == 'X') {
                 result -= 1;
             } else {
                 result += 1;
@@ -17,7 +17,7 @@ int romanToInt(char* s) {
         } else if (s[i] == 'V') {
             result += 5;
         } else if (s[i] == 'X') {
-            if (s[i+1] == 'L' || s[i+1] == 'C') {
+            if (s[i + 1] == 'L' || s[i + 1] == 'C') {
                 result -= 10;
             } else {
                 result += 10;
@@ -25,7 +25,7 @@ int romanToInt(char* s) {
         } else if (s[i] == 'L') {
             result += 50;
         } else if (s[i] == 'C') {
-            if (s[i+1] == 'D' || s[i+1] == 'M') {
+            if (s[i + 1] == 'D' || s[i + 1] == 'M') {
                 result -= 100;
             } else {
                 result += 100;
@@ -40,17 +40,19 @@ int romanToInt(char* s) {
     }
     return result;
 }
+
 void aux_romanToInt() {
     char roman[16];
     printf("Ingrese el numero romano que desee convertir... : ");
     scanf("%s", roman); //se captura el dato ingresado
     int result = romanToInt(roman); //se envia el resultado al metodo de conversion
-        if (result == -1) {
-            printf("Null\n");
-        } else {
-            printf("%d\n", result);
-        }
+    if (result == -1) {
+        printf("Null\n");
+    } else {
+        printf("%d\n", result);
+    }
 }
+
 //Factores Primos
 void factoresPrimos(int numero) {
     int i;
@@ -100,7 +102,8 @@ void factoresPrimos(int numero) {
     }
     printf("\n");
 }
-int aux_factoresPrimos(){
+
+int aux_factoresPrimos() {
 
     int n;
     //Le pedimos al usuario que ingrese un numero
@@ -113,6 +116,7 @@ int aux_factoresPrimos(){
     return 0;
 
 }
+
 //Borrar Espacios
 void borrarEspacios(char *cadenaTexto) {
     int i = 0, j = 0;
@@ -134,6 +138,7 @@ void borrarEspacios(char *cadenaTexto) {
 
     cadenaTexto[j] = '\0';
 }
+
 char aux_borrarEspacios() {
 #define MAX_LEN 100
     char cadenaTexto[MAX_LEN];
@@ -149,6 +154,8 @@ char aux_borrarEspacios() {
     return 0;
 }
 
+
+
 int menuOption;
 char *menu = "\t---MENU DE OPCIONES--- \n\n"
              "1. Numeros Romanos\n"
@@ -157,9 +164,9 @@ char *menu = "\t---MENU DE OPCIONES--- \n\n"
              "4. \n"
              "5. \n"
              "6. \n"
-             "7. Matriz\n"
-             "8. \n"
-             "9. \n"
+             "7. Producto Punto\n"
+             "8. Multiplicacion de Matrices\n"
+             "9. Matriz Magica\n"
              "0. Salir\n\n"
              "Dijite una opcion del menu\n";
 
@@ -199,6 +206,7 @@ int main() {
 
                 break;
             case 7:
+                printf("--Producto Punto--");
 
                 break;
             case 8:
