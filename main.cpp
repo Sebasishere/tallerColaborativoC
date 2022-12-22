@@ -198,6 +198,83 @@ int productoPunto() {
 
 }
 
+int multiplicacionMatriz() {
+    int a[15][15], b[15][15], c[15][15];
+    int f1, f2, c1, c2;
+
+    int cont, aux;
+
+    printf("\n Agregue el numero de filas de la matriz 1 \n");
+    scanf("%d", &f1);
+
+    printf("Agregue el numero de columnas de la matriz 1 \n");
+    scanf("%d", &c1);
+
+    printf("Agregue el numero de filas de la matriz 2 \n ");
+    scanf("%d", &f2);
+
+    printf("Agregue el numero de columnas de la matriz 2 \n");
+    scanf("%d", &c2);
+
+
+    if (f1 == c2) {
+        printf("Primera Matriz\n");
+        for (int i = 0; i < f1; ++i) {
+            for (int j = 0; j < c1; ++j) {
+                printf("Ingrese la posicion [%d][%d]: ", i, j);
+                scanf("%d", &a[i][j]);
+            }
+        }
+
+        printf("Segunda Matriz\n");
+        for (int i = 0; i < f2; ++i) {
+            for (int j = 0; j < c2; ++j) {
+                printf("Ingrese la posicion [%d][%d]: ", i, j);
+                scanf("%d", &b[i][j]);
+
+            }
+        }
+        for (int i = 0; i < f1; ++i) {
+            for (int j = 0; j < c1; ++j) {
+                for (cont = 0, aux = 0; cont < c1; ++cont) {
+                    aux = aux + a[i][cont] * b[cont][j];
+                }
+                c[i][j] = aux;
+            }
+        }
+
+        printf("\nPrimer matriz \n");
+        for (int i = 0; i < f1; ++i) {
+            printf("\n");
+            for (int j = 0; j < c1; ++j) {
+                printf("%d", a[i][j]);
+            }
+        }
+
+        printf("\n Segunda matriz");
+        for (int i = 0; i < f2; ++i) {
+            printf("\n");
+            for (int j = 0; j < c2; ++j) {
+                printf("%d", b[i][j]);
+            }
+        }
+
+        printf("\n Multiplicacion de matriz\n");
+        for (int i = 0; i < f1; ++i) {
+            printf("\n");
+            for (int j = 0; j < c2; ++j) {
+                printf("%d", c[i][j]);
+            }
+        }
+    } else {
+        printf("Null\n");
+        return NULL;
+
+    }
+
+
+}
+
 
 int menuOption;
 char *menu = "\t---MENU DE OPCIONES--- \n\n"
@@ -254,7 +331,8 @@ int main() {
                 break;
             case 8:
                 printf("--Multiplicacion de Matrices--");
-
+                multiplicacionMatriz();
+                printf("\n");
 
 
                 break;
