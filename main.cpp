@@ -218,22 +218,20 @@ int multiplicacionMatriz() {
 
 
     if (f1 == c2) {
-        printf("Primera Matriz\n");
+
+
         for (int i = 0; i < f1; ++i) {
             for (int j = 0; j < c1; ++j) {
-                printf("Ingrese la posicion [%d][%d]: ", i, j);
-                scanf("%d", &a[i][j]);
+                a[i][j] = rand() % 9 + 1;
             }
         }
 
-        printf("Segunda Matriz\n");
         for (int i = 0; i < f2; ++i) {
             for (int j = 0; j < c2; ++j) {
-                printf("Ingrese la posicion [%d][%d]: ", i, j);
-                scanf("%d", &b[i][j]);
-
+                b[i][j] = rand() % 9 + 1;
             }
         }
+
         for (int i = 0; i < f1; ++i) {
             for (int j = 0; j < c1; ++j) {
                 for (cont = 0, aux = 0; cont < c1; ++cont) {
@@ -243,11 +241,11 @@ int multiplicacionMatriz() {
             }
         }
 
-        printf("\nPrimer matriz \n");
+        printf("\nPrimer matriz8");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c1; ++j) {
-                printf("%d", a[i][j]);
+                printf("\t%d", a[i][j]);
             }
         }
 
@@ -272,7 +270,7 @@ int multiplicacionMatriz() {
 
     }
 
-
+    return NULL;
 }
 
 
