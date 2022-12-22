@@ -155,6 +155,49 @@ char aux_borrarEspacios() {
 }
 
 
+int productoPunto() {
+
+    int vecOne[5], vecTwo[5];
+    int aux[5];
+    int result = 0;
+    int lenOne, lenTwo;
+
+    printf("\nIngrese la longitud del vector 1\n");
+    scanf("%d", &lenOne);
+
+    printf("\nIngrese la longitud del vector 2\n");
+    scanf("%d", &lenTwo);
+
+
+    if (lenOne == lenTwo) {
+        printf("Agregue valores al primer vector \n");
+        for (int i = 0; i < lenOne; i++)
+            scanf("%d", &vecOne[i]);
+        printf("Agregue valores al segundo vector \n");
+        for (int i = 0; i < lenTwo; i++)
+            scanf("%d", &vecTwo[i]);
+
+
+    } else {
+
+
+        printf("Null\n");
+        return NULL;
+
+    }
+
+    for (int i = 0; i < lenTwo; i++) {
+        aux[i] = vecOne[i] * vecTwo[i];
+        result += aux[i];
+    }
+
+
+    printf("El producto punto de los vectores registrados es --> %d \n ", result);
+
+    return result;
+
+}
+
 
 int menuOption;
 char *menu = "\t---MENU DE OPCIONES--- \n\n"
@@ -207,12 +250,17 @@ int main() {
                 break;
             case 7:
                 printf("--Producto Punto--");
-
+                productoPunto();
                 break;
             case 8:
+                printf("--Multiplicacion de Matrices--");
+
+
 
                 break;
             case 9:
+                printf("--Matriz Magica--");
+
 
                 break;
 
