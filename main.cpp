@@ -155,6 +155,25 @@ char aux_borrarEspacios() {
 }
 
 
+int Numeros_Egolatras(int n){
+    int numeroDigitos =floor(log10(n)+1);
+    char cadena [numeroDigitos + 1];;
+
+    sprintf (cadena,"%d",n);
+
+    int suma=0;
+    for(int i=0;i<numeroDigitos; i++){
+        int cont = cadena[i] - '0';
+
+        int elevado = pow(cont, numeroDigitos);
+        suma=suma +elevado;
+    }
+    if(suma==n){
+        return 1;
+    }else{
+        return 0;
+    }
+}
 int productoPunto() {
 
     int vecOne[5], vecTwo[5];
@@ -218,22 +237,20 @@ int multiplicacionMatriz() {
 
 
     if (f1 == c2) {
-        printf("Primera Matriz\n");
+
+
         for (int i = 0; i < f1; ++i) {
             for (int j = 0; j < c1; ++j) {
-                printf("Ingrese la posicion [%d][%d]: ", i, j);
-                scanf("%d", &a[i][j]);
+                a[i][j] = rand() % 9 + 1;
             }
         }
 
-        printf("Segunda Matriz\n");
         for (int i = 0; i < f2; ++i) {
             for (int j = 0; j < c2; ++j) {
-                printf("Ingrese la posicion [%d][%d]: ", i, j);
-                scanf("%d", &b[i][j]);
-
+                b[i][j] = rand() % 9 + 1;
             }
         }
+
         for (int i = 0; i < f1; ++i) {
             for (int j = 0; j < c1; ++j) {
                 for (cont = 0, aux = 0; cont < c1; ++cont) {
@@ -243,11 +260,11 @@ int multiplicacionMatriz() {
             }
         }
 
-        printf("\nPrimer matriz \n");
+        printf("\nPrimer matriz8");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c1; ++j) {
-                printf("%d", a[i][j]);
+                printf("\t%d", a[i][j]);
             }
         }
 
@@ -272,7 +289,7 @@ int multiplicacionMatriz() {
 
     }
 
-
+    return NULL;
 }
 
 
@@ -316,6 +333,13 @@ int main() {
                 aux_borrarEspacios();
                 break;
             case 4:
+
+                int num = 0;
+                printf("-------Numeros Egolatras-----\n");
+                printf("Ingrese el numero \n ");
+                scanf("%d",&num);
+                printf("El numero %d %s",num, Numeros_Egolatras( num)?"es egolatra":"No es egolatra\n");
+
 
                 break;
             case 5:
