@@ -502,7 +502,7 @@ int main() {
 
                 break;
             case 9:
-                printf("--Matriz Magica--");
+                printf("--Matriz Magica---");
 
 
                 break;
