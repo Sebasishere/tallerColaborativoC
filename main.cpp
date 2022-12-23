@@ -155,6 +155,25 @@ char aux_borrarEspacios() {
 }
 
 
+int Numeros_Egolatras(int n){
+    int numeroDigitos =floor(log10(n)+1);
+    char cadena [numeroDigitos + 1];;
+
+    sprintf (cadena,"%d",n);
+
+    int suma=0;
+    for(int i=0;i<numeroDigitos; i++){
+        int cont = cadena[i] - '0';
+
+        int elevado = pow(cont, numeroDigitos);
+        suma=suma +elevado;
+    }
+    if(suma==n){
+        return 1;
+    }else{
+        return 0;
+    }
+}
 int productoPunto() {
 
     int vecOne[5], vecTwo[5];
@@ -279,9 +298,9 @@ char *menu = "\t---MENU DE OPCIONES--- \n\n"
              "1. Numeros Romanos\n"
              "2. Factores Primos\n"
              "3. Borrar Espacios\n"
-             "4. \n"
-             "5. \n"
-             "6. \n"
+             "4.  Numeros Egolatras \n"
+             "5. Numero Magico \n"
+             "6. Fechas\n";
              "7. Producto Punto\n"
              "8. Multiplicacion de Matrices\n"
              "9. Matriz Magica\n"
@@ -314,6 +333,13 @@ int main() {
                 aux_borrarEspacios();
                 break;
             case 4:
+
+                int num = 0;
+                printf("-------Numeros Egolatras-----\n");
+                printf("Ingrese el numero \n ");
+                scanf("%d",&num);
+                printf("El numero %d %s",num, Numeros_Egolatras( num)?"es egolatra":"No es egolatra\n");
+
 
                 break;
             case 5:
