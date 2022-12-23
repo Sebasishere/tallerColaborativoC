@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
@@ -226,6 +227,84 @@ int NumeroMagico(int number){
     }
 
 }
+void Date (char date[10]) {
+
+
+    if (date[2] == '/' && date[5] == '/'&& date[9] !=
+                                           '\0'&& date[8] !=
+                                                  '\0'&&date[7] !=
+                                                        '\0'&&date[6] !=
+                                                              '\0') {
+        char mes;
+        char dia1=date[0];
+        char dia2=date[1];
+        char mes1=date[3];
+        char mes2=date[4];
+        char año1=date[6];
+        char año2=date[7];
+        char año3=date[8];
+        char año4=date[9];
+
+
+        if ( dia1=='0' || dia1=='1' ||dia1=='2'  ) {
+
+            if(mes1=='0' && mes2=='1'){
+                printf("%c%c de Enero de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }else if(mes1=='0' && mes2=='2'){
+                printf("%c%c de Febrero de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='3'){
+                printf("%c%c de Marzo de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='4'){
+                printf("%c%c de Abril de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='5'){
+                printf("%c%c de Mayo de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='6'){
+                printf("%c%c de Junio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='7'){
+                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='7'){
+                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='7'){
+                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='8'){
+                printf("%c%c de Agosto de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='0' && mes2=='9'){
+                printf("%c%c de Septiembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='1' && mes2=='0'){
+                printf("%c%c de Octubre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            } else if(mes1=='1' && mes2=='1'){
+                printf("%c%c de Noviembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+            else if(mes1=='1' && mes2=='2'){
+                printf("%c%c de Diciembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
+            }
+
+            else {
+                printf("El mes no es valido");
+            }
+
+
+        } else {
+            printf("El dia no es valido");
+        }
+    }
+    else{
+        printf("La fecha  no es correcta por favor ingresera con el formato=01/12/2022");
+    }
+
+
+
+}
 
 int productoPunto() {
 
@@ -405,7 +484,11 @@ int main() {
                 break;
 
             case 6:
-
+                printf("-------Fechas-----");
+                printf("Ingrese la fecha de la siguiente forma 02/12/2022 \n ");
+                scanf("%s",&date);
+                Date(date);
+                break;
                 break;
             case 7:
                 printf("--Producto Punto--");
