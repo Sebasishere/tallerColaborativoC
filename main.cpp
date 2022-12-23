@@ -495,7 +495,7 @@ int main() {
                 productoPunto();
                 break;
             case 8:
-                printf("--Multiplicacion de Matrices--");
+                printf("---Multiplicacion de Matrices--");
                 multiplicacionMatriz();
                 printf("\n");
 
